@@ -1,0 +1,33 @@
+---
+description: GitHub issue and branch workflow — search issues first, work on branches, never push to main
+alwaysApply: true
+---
+
+# Ticket / Issue Workflow
+
+Follow this procedure when doing work on tickets. You may ask for guidance, but adhere to this workflow.
+
+## 1. Find or create an issue
+
+- **Look on GitHub for existing issues first.** Search the repo's Issues for one that matches the work.
+- **Create a new issue only if no matching issue exists.** Do not open a duplicate.
+
+## 2. Work on a branch
+
+- **All work for an issue is done on a branch.** Do not make changes on `main`.
+- Create a branch (e.g. from the issue number or a short description) and do the work there.
+
+## 3. Never push to main
+
+- **Never push directly to the main branch.** All changes go through a branch and then a pull request.
+
+## 4. Pull requests
+
+- **Open a pull request only when the user asks for one.** Do not open a PR unless they request it.
+
+## Summary
+
+1. Search GitHub issues → create issue only if none matches.
+2. Do work on a branch, never on `main`.
+3. Never push to `main`.
+4. Open a PR only when the user asks for it.
