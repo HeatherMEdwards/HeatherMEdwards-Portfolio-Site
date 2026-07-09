@@ -1,0 +1,198 @@
+/* Responsive overrides for static export (original layout is fixed-width desktop mesh) */
+/* CSS-only hamburger menu (desktop: hidden) */
+.mob-menu-bar { display: none; }
+
+@media (max-width: 750px) {
+  /* replace the desktop horizontal menu with the hamburger */
+  #SITE_HEADER nav { display: none !important; }
+  .mob-menu-bar {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    font-family: helvetica, arial, sans-serif;
+  }
+  .mob-toggle { display: none; }
+  .mob-burger {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 14px 16px;
+    cursor: pointer;
+  }
+  .mob-burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #222;
+  }
+  .mob-nav { display: none; }
+  .mob-toggle:checked ~ .mob-nav {
+    display: block;
+    background: #fff;
+    border-top: 1px solid #eee;
+  }
+  .mob-nav a {
+    display: block;
+    padding: 13px 20px;
+    color: #222;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  :root {
+    --site-width: 100vw;
+  }
+  html, body {
+    overflow-x: hidden;
+  }
+  #site-root {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  /* fixed-px components scale to viewport; sections carry min-width:980px */
+  [id^="comp-"] {
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  /* anonymous fixed-width wrappers inside components (repeaters, state boxes) */
+  [id^="comp-"] > div:not([class]),
+  [id^="comp-"] > div:not([class]) > div,
+  [data-mesh-id],
+  [id*="_wrapper"] > *,
+  [id*="__item"] {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+  /* mesh = CSS grid where side-by-side comps share a row via left:Xpx offsets
+     inside a 980px canvas — collapse to simple vertical flow in DOM order */
+  [data-mesh-id$="-gridContainer"] {
+    display: block !important;
+  }
+  [data-mesh-id$="-gridContainer"] > [id]:not([id^="bgLayers"]):not([id^="bgMedia"]),
+  [data-mesh-id$="-gridContainer"] > interact-element > [id] {
+    position: relative !important;
+    left: 0 !important;
+    top: auto !important;
+    margin: 14px auto !important;
+    display: block;
+  }
+  /* theme fonts are fixed px (font_0:80, font_2:70, font_3:40, font_4:36 …) — scale down */
+  .font_0 { font-size: clamp(28px, 9vw, 44px) !important; line-height: 1.2 !important; letter-spacing: 0.06em !important; }
+  .font_1 { font-size: 13px !important; }
+  .font_2 { font-size: clamp(24px, 8vw, 38px) !important; line-height: 1.2 !important; letter-spacing: 0.06em !important; text-align: center !important; }
+  .font_2 * { letter-spacing: 0.06em !important; }
+  .font_3 { font-size: clamp(24px, 8vw, 34px) !important; line-height: 1.25 !important; }
+  .font_4 { font-size: clamp(22px, 7vw, 30px) !important; line-height: 1.25 !important; }
+  .font_5 { font-size: clamp(19px, 6vw, 24px) !important; line-height: 1.3 !important; }
+  .font_6 { font-size: clamp(17px, 5vw, 20px) !important; line-height: 1.3 !important; }
+  .font_7 { font-size: 16px !important; line-height: 1.4 !important; }
+  .font_8 { font-size: 15px !important; line-height: 1.4 !important; }
+  /* column strips stack vertically */
+  [data-testid="columns"] {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  [data-testid="columns"] > * {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  /* media scales down */
+  img, video, iframe {
+    max-width: 100% !important;
+  }
+  /* SVG display titles (TextMask) scale with viewport via injected viewBox */
+  [id^="comp-"] svg {
+    max-width: 100% !important;
+  }
+  [id^="comp-"] svg[viewBox] {
+    width: 90% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+  /* pro-gallery sliders: fluid width, items stack vertically */
+  .pro-gallery-margin-container,
+  .pro-gallery-parent-container,
+  .pro-gallery,
+  .gallery-horizontal-scroll {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .gallery-horizontal-scroll-inner {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  /* wrappers keep fixed design heights — release them so stacked items push content down */
+  [id^="comp-"]:has(.pro-gallery),
+  [data-mesh-id]:has(.pro-gallery),
+  .pro-gallery-parent-container > div {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .gallery-item-container {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 24px !important;
+  }
+  .gallery-item-container .gallery-item-wrapper,
+  .gallery-item-container .gallery-item-content {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .gallery-item-container img.gallery-item-visible,
+  .gallery-item-container img {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  /* long words / headings don't overflow */
+  [data-testid="richTextElement"],
+  [data-testid="richTextElement"] * {
+    overflow-wrap: break-word;
+  }
+  /* body text keeps breathing room at screen edges */
+  [data-testid="richTextElement"] {
+    max-width: calc(100% - 32px) !important;
+  }
+  /* horizontal menu wraps and centers instead of overflowing */
+  nav [data-part="item-list"],
+  nav ul {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    max-width: 100% !important;
+    height: auto !important;
+    row-gap: 2px;
+  }
+  nav, nav * {
+    min-width: 0;
+  }
+  /* comfortable tap targets */
+  nav li a,
+  nav [data-part="menu-item"] a {
+    display: inline-block;
+    padding: 10px 12px !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+  }
+  nav li {
+    height: auto !important;
+  }
+}
