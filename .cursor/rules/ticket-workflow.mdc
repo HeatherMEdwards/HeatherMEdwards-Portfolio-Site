@@ -25,9 +25,15 @@ Follow this procedure when doing work on tickets. You may ask for guidance, but 
 
 - **Open a pull request only when the user asks for one.** Do not open a PR unless they request it.
 
+## 5. Mobile first
+
+- **Design and update mobile first.** When creating or updating a page, start with the mobile viewport (e.g. ~375px) before desktop.
+- Verify layout, tap targets, and font sizing at mobile widths before checking tablet and desktop breakpoints.
+
 ## Summary
 
 1. Search GitHub issues → create issue only if none matches.
 2. Do work on a branch, never on `main`.
 3. Never push to `main`.
 4. Open a PR only when the user asks for it.
+5. Design and update mobile first.
