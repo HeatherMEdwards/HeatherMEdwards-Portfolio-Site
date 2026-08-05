@@ -195,4 +195,8 @@
   nav li {
     height: auto !important;
   }
+  /* About/home section: drop the gray strip and gray image-column backgrounds
+     so no gray shows beside the header text or profile image */
+  #comp-mim70edk { --bg-overlay-color: #fff !important; }
+  #comp-mim70efd2 { --bg-overlay-color: #fff !important; }
 }
