@@ -195,6 +195,18 @@
   nav li {
     height: auto !important;
   }
+  /* shrink the About/home page header text on mobile */
+  #comp-mim70edx5 h2 {
+    font-size: clamp(18px, 5.5vw, 26px) !important;
+    letter-spacing: 0.04em !important;
+  }
+  #comp-mim70edx5 .hm-line1,
+  #comp-mim70edx5 .hm-line2,
+  #comp-mim70edx5 .hm-line3 {
+    display: block !important;
+    white-space: nowrap !important;
+  }
+  #comp-mim70eef p { font-size: clamp(18px, 5vw, 24px) !important; }
   /* About/home section: drop the gray strip and gray image-column backgrounds
      so no gray shows beside the header text or profile image */
   #comp-mim70edk { --bg-overlay-color: #fff !important; }
