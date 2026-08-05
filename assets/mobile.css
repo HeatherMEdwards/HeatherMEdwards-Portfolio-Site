@@ -196,7 +196,8 @@
     height: auto !important;
   }
   /* shrink the About/home page header text on mobile */
-  #comp-mim70edx5 h2 {
+  #comp-mim70edx5 h2,
+  #comp-mim70edx5 h2 span {
     font-size: clamp(18px, 5.5vw, 26px) !important;
     letter-spacing: 0.04em !important;
   }
