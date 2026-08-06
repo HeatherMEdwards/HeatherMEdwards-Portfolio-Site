@@ -1,6 +1,9 @@
 /* Responsive overrides for static export (original layout is fixed-width desktop mesh) */
 /* CSS-only hamburger menu (desktop: hidden) */
 .mob-menu-bar { display: none; }
+/* Faith page: single Pope photo as the page header image (replaces the gallery) */
+.faith-hero { width: 100%; }
+.faith-hero img { display: block; width: 100%; height: auto; }
 
 @media (max-width: 750px) {
   /* replace the desktop horizontal menu with the hamburger */
