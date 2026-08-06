@@ -1,6 +1,8 @@
 /* Responsive overrides for static export (original layout is fixed-width desktop mesh) */
 /* CSS-only hamburger menu (desktop: hidden) */
 .mob-menu-bar { display: none; }
+/* mobile-only Medium/Substack row (shown under the profile image; desktop: hidden) */
+.hm-mob-social { display: none; }
 
 @media (max-width: 750px) {
   /* replace the desktop horizontal menu with the hamburger */
@@ -214,4 +216,28 @@
      so no gray shows beside the header text or profile image */
   #comp-mim70edk { --bg-overlay-color: #fff !important; }
   #comp-mim70efd2 { --bg-overlay-color: #fff !important; }
+  /* Medium/Substack icons+links: hidden in the text column, shown below the
+     profile image on one line (Medium left, Substack right) */
+  #comp-mio1ryux, #comp-mio1uhn5, #comp-mio1ryty, #comp-mio1ve0d { display: none !important; }
+  .hm-mob-social {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 18px 0 24px !important;
+    padding: 0 8px;
+  }
+  .hm-mob-social__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #222;
+    text-decoration: none;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 16px;
+  }
+  .hm-mob-social__link:first-child img { border-radius: 50%; }
+  .hm-mob-social__name { text-decoration: underline; }
 }
