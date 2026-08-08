@@ -1,13 +1,16 @@
 /* Responsive overrides for static export (original layout is fixed-width desktop mesh) */
 /* CSS-only hamburger menu (desktop: hidden) */
 .mob-menu-bar { display: none; }
-/* Faith page: single Pope photo as the page header image (replaces the gallery) */
-.faith-hero { width: 100%; }
-.faith-hero img { display: block; width: 100%; height: auto; }
+/* Faith page: desktop keeps the original gallery; the Pope photo is mobile-only */
+.faith-hero { display: none; }
 
 @media (max-width: 750px) {
   /* replace the desktop horizontal menu with the hamburger */
   #SITE_HEADER nav { display: none !important; }
+  /* Faith page: swap the gallery for the single Pope photo header image */
+  #comp-miryjj9g { display: none !important; }
+  .faith-hero { display: block; width: 100%; margin: 14px auto; }
+  .faith-hero img { display: block; width: 100%; height: auto; }
   .mob-menu-bar {
     display: block;
     position: sticky;
