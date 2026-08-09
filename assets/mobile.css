@@ -54,6 +54,23 @@
     font-size: 17px;
     border-bottom: 1px solid #f0f0f0;
   }
+  /* Multimedia group: top-level item, with Graphic Design & Photography as
+     always-visible indented subpages beneath it */
+  .mob-group > a {
+    color: #222;
+  }
+  .mob-sub {
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .mob-sub a {
+    padding: 11px 20px 11px 36px;
+    font-size: 15px;
+    color: #555;
+    border-bottom: 0;
+  }
+  .mob-sub a:last-child {
+    padding-bottom: 13px;
+  }
   :root {
     --site-width: 100vw;
   }
