@@ -238,6 +238,20 @@
     white-space: nowrap !important;
   }
   #comp-mim70eef p { font-size: clamp(18px, 5vw, 24px) !important; }
+  /* About page: extend profile pic to 5px margins on mobile. Header, subhead,
+     and blurb keep a 16px margin to match the about text below the pic. The
+     hero column strip is inset by its desktop padding (60px); collapse it. */
+  #comp-mim70edk [data-testid="columns"] {
+    width: calc(100% - 10px) !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+  }
+  #comp-mim70edx5, #comp-mim70eef, #comp-mim70eeh2 {
+    width: calc(100% - 22px) !important;
+    max-width: 100% !important;
+    margin-left: 11px !important;
+    margin-right: 11px !important;
+  }
   /* About/home section: drop the gray strip and gray image-column backgrounds
      so no gray shows beside the header text or profile image */
   #comp-mim70edk { --bg-overlay-color: #fff !important; }
