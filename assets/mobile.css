@@ -264,6 +264,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 48px;
+    transform: translateX(-5px);
     box-sizing: border-box;
     width: 100%;
     margin: 18px 0 24px !important;
@@ -277,6 +279,10 @@
     text-decoration: none;
     font-family: helvetica, arial, sans-serif;
     font-size: 16px;
+  }
+  .hm-mob-social__link img {
+    width: 50px;
+    height: auto;
   }
   .hm-mob-social__link:first-child img { border-radius: 50%; }
   .hm-mob-social__name { text-decoration: underline; }
