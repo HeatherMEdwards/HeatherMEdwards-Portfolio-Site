@@ -1,6 +1,23 @@
 /* Responsive overrides for static export (original layout is fixed-width desktop mesh) */
 /* CSS-only hamburger menu (desktop: hidden) */
 .mob-menu-bar { display: none; }
+/* Footer social icons (LinkedIn, GitHub, Instagram): shown on every page on desktop and mobile */
+.footer-social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 16px;
+  margin: 0 auto 20px;
+}
+.footer-social__link {
+  display: inline-flex;
+  align-items: center;
+}
+.footer-social__link img { display: block; }
 /* mobile-only Medium/Substack row (shown under the profile image; desktop: hidden) */
 .hm-mob-social { display: none; }
 /* Faith page: desktop keeps the original gallery; the Pope photo is mobile-only */
