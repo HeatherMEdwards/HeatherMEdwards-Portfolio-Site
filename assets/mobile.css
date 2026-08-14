@@ -7,6 +7,9 @@
 .faith-hero { display: none; }
 /* Culture page: desktop keeps the original gallery; the flowers photo is mobile-only */
 .culture-hero { display: none; }
+/* Home header: keep "& Communications" together on desktop so the wrap point is
+   between "Writing" and the ampersand (mobile keeps the ampersand on line 2) */
+#comp-mim70edx5 .hm-line3 { white-space: nowrap; }
 
 @media (max-width: 750px) {
   /* replace the desktop horizontal menu with the hamburger */
@@ -243,6 +246,8 @@
     display: block !important;
     white-space: nowrap !important;
   }
+  #comp-mim70edx5 .hm-line2::after { content: ' &'; }
+  #comp-mim70edx5 .hm-line3 .hm-amp { display: none; }
   #comp-mim70eef p { font-size: clamp(18px, 5vw, 24px) !important; }
   /* About page: extend profile pic to 5px margins on mobile. Header, subhead,
      and blurb keep a 16px margin to match the about text below the pic. The
@@ -270,6 +275,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 48px;
+    transform: translateX(-5px);
     box-sizing: border-box;
     width: 100%;
     margin: 18px 0 24px !important;
@@ -283,6 +290,10 @@
     text-decoration: none;
     font-family: helvetica, arial, sans-serif;
     font-size: 16px;
+  }
+  .hm-mob-social__link img {
+    width: 50px;
+    height: auto;
   }
   .hm-mob-social__link:first-child img { border-radius: 50%; }
   .hm-mob-social__name { text-decoration: underline; }
