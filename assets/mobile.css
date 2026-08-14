@@ -5,6 +5,8 @@
 .hm-mob-social { display: none; }
 /* Faith page: desktop keeps the original gallery; the Pope photo is mobile-only */
 .faith-hero { display: none; }
+/* Culture page: desktop keeps the original gallery; the flowers photo is mobile-only */
+.culture-hero { display: none; }
 
 @media (max-width: 750px) {
   /* replace the desktop horizontal menu with the hamburger */
@@ -13,6 +15,10 @@
   #comp-miryjj9g { display: none !important; }
   .faith-hero { display: block; width: 100%; margin: 14px auto; }
   .faith-hero img { display: block; width: 100%; height: auto; }
+  /* Culture page: swap the sliding gallery for the single flowers photo header image */
+  #comp-mdcn1rj4 { display: none !important; }
+  .culture-hero { display: block; width: 100%; margin: 14px auto; }
+  .culture-hero img { display: block; width: 100%; height: auto; }
   /* Faith page: drop desktop-only spacers that inflate mobile spacing */
   [data-mesh-id="comp-mitp0g6uinlineContent-wedge-4"] { display: none !important; }
   #comp-mijg9elw { min-height: 0 !important; }
