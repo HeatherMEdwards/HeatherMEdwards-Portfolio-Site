@@ -27,6 +27,17 @@
 /* Home header: keep "& Communications" together on desktop so the wrap point is
    between "Writing" and the ampersand (mobile keeps the ampersand on line 2) */
 #comp-mim70edx5 .hm-line3 { white-space: nowrap; }
+/* Standard link style: no underline. The Wix export underlines content links
+   via inline style="text-decoration:underline" on wrapping spans, so override
+   with !important. Links are regular black text (including visited); blue only
+   on hover. Applied to body-text (rich text) links; nav and social-icon links
+   keep their own styling. */
+a { text-decoration: none !important; }
+[data-testid="richTextElement"] span { text-decoration: none !important; }
+[data-testid="richTextElement"] a,
+[data-testid="richTextElement"] a:link { color: #000 !important; }
+[data-testid="richTextElement"] a:visited { color: #000 !important; }
+[data-testid="richTextElement"] a:hover { color: #2573da !important; }
 
 @media (max-width: 750px) {
   /* replace the desktop horizontal menu with the hamburger */
