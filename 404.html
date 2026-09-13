@@ -15,12 +15,21 @@
     padding: 0;
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     background: #ffffff;
     font-family: 'tenor sans', Arial, Helvetica, sans-serif;
   }
-  .page { width: 100%; max-width: 1366px; }
+  .mob-menu-bar { display: none; }
+  .page {
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .error-message {
     margin: 16px 16px 38px;
     font-family: 'tenor sans', Arial, Helvetica, sans-serif;
@@ -44,7 +53,7 @@
     margin: 0 auto;
   }
   .links {
-    margin: 38px 16px 16px;
+    margin: 24px 16px 40px;
     font-family: 'glacial indifference', 'tenor sans', Arial, Helvetica, sans-serif;
     font-size: 20px;
     line-height: 1.25em;
@@ -58,7 +67,7 @@
   }
   .links a:hover { color: #2573da; }
   .photo-credit {
-    margin: 12px 16px 24px;
+    margin: 8px 16px 0;
     font-family: 'tenor sans', Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 1.4em;
@@ -66,16 +75,120 @@
     text-align: center;
     color: #000000;
   }
+  .site-footer {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px 13px;
+    background: rgba(64, 64, 64, 0.5);
+  }
+  .site-footer .copyright {
+    margin: 0 0 11px;
+    font-family: 'tenor sans', Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: normal;
+    text-align: center;
+    color: #000000;
+  }
+  .site-footer .copyright strong { font-weight: bold; }
+  .site-footer .footer-social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+  .site-footer .footer-social a {
+    display: inline-flex;
+    align-items: center;
+  }
+  .site-footer .footer-social img { display: block; }
+  @media (max-width: 750px) {
+    .mob-menu-bar {
+      display: block;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      font-family: helvetica, arial, sans-serif;
+    }
+    .mob-toggle { display: none; }
+    .mob-burger {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      padding: 14px 16px;
+      cursor: pointer;
+    }
+    .mob-burger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #222;
+    }
+    .mob-nav { display: none; }
+    .mob-toggle:checked ~ .mob-nav {
+      display: block;
+      background: #fff;
+      border-top: 1px solid #eee;
+    }
+    .mob-nav a {
+      display: block;
+      padding: 13px 20px;
+      color: #222;
+      text-decoration: none;
+      font-size: 17px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .mob-group > a { color: #222; }
+    .mob-sub { border-bottom: 1px solid #f0f0f0; }
+    .mob-sub a {
+      padding: 11px 20px 11px 36px;
+      font-size: 15px;
+      color: #555;
+      border-bottom: 0;
+    }
+  }
 </style>
 </head>
 <body>
+<div class="mob-menu-bar">
+  <input type="checkbox" id="mob-toggle" class="mob-toggle"/>
+  <label for="mob-toggle" class="mob-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+  <nav class="mob-nav">
+    <a href="index.html">About</a>
+    <div class="mob-group">
+      <a href="multimedia.html">Multimedia</a>
+      <div class="mob-sub">
+        <a href="graphic-design.html">Graphic Design</a>
+        <a href="photography.html">Photography</a>
+      </div>
+    </div>
+    <a href="culture.html">Culture</a>
+    <a href="faith.html">Faith</a>
+    <a href="politics.html">Politics</a>
+    <a href="humanrights.html">Human Rights</a>
+    <a href="interviews.html">Interviews</a>
+  </nav>
+</div>
 <div class="page">
   <p class="error-message">We can&rsquo;t find the page you&rsquo;re looking for, but not all who wander are lost.</p>
   <div class="hero">
     <img src="assets/404.jpg" alt="We can't find the page you're looking for, but not all who wander are lost." width="2048" height="1222"/>
   </div>
-  <p class="links">You can <a href="https://heathermedwards.com/">return to the home page here</a>. Or <a href="https://substack.com/@heathermedwards">read the most recent posts here</a>.</p>
   <p class="photo-credit">Photo by Hennie Stander. Knysna Quays, South Africa.</p>
+  <p class="links">You can <a href="https://heathermedwards.com/">return to the home page here</a>. Or <a href="https://substack.com/@heathermedwards">read the most recent posts here</a>.</p>
 </div>
+<footer class="site-footer">
+  <p class="copyright"><strong>All rights &copy; Heather M. Edwards</strong></p>
+  <div class="footer-social" aria-label="Social links">
+    <a href="https://www.linkedin.com/in/heathermedwards/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3Bv42cjmHSQ1OVQy9Jp0Z%2Buw%3D%3D" target="_blank" rel="noreferrer noopener"><img src="assets/full_11062b_60c5fc4a3ecd49f2a697206b09eeace1_mv2.png" alt="LinkedIn" width="20" height="20"/></a>
+    <a href="https://github.com/HeatherMEdwards" target="_blank" rel="noreferrer noopener"><img src="assets/full_11062b_6907272129714711a577fe8d9e238bf1_mv2.png" alt="GitHub" width="20" height="20"/></a>
+    <a href="https://www.instagram.com/with.liberty/" target="_blank" rel="noreferrer noopener"><img src="assets/full_11062b_6e9638ad803e4099a6116eb750b5a584_mv2.png" alt="Instagram" width="20" height="20"/></a>
+  </div>
+</footer>
 </body>
 </html>
