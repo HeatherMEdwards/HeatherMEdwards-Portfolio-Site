@@ -24,6 +24,36 @@
 .faith-hero { display: none; }
 /* Culture page: desktop keeps the original gallery; the flowers photo is mobile-only */
 .culture-hero { display: none; }
+/* Culture page: subheading between the gallery and the article list */
+.culture-subheading {
+  display: block;
+  box-sizing: border-box;
+  width: auto;
+  margin: 22px calc((100% - 980px) * 0.5) 0;
+  padding: 0 65px;
+  grid-area: 2 / 1 / 3 / 2;
+  text-align: center;
+}
+.culture-subheading h5 { margin: 0; }
+/* Culture page: move the article list below the subheading on desktop */
+[data-mesh-id="Containere57usinlineContent-gridContainer"] > [id="comp-minnh5lz"] {
+  grid-area: 3 / 1 / 4 / 2 !important;
+}
+/* Culture page: article links read as a two-column list on desktop */
+#comp-minnhq72 {
+  column-count: 2;
+  column-gap: 48px;
+  column-fill: balance;
+}
+#comp-minnhq72 p {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  line-height: 1.4;
+  margin-bottom: 1.6em;
+}
+/* Empty group separators would land at a column top and push the other column
+   down — drop them so both columns start with visible text */
+#comp-minnhq72 p:not(:has(a)):has(> span) { display: none; }
 /* Home header: keep "& Communications" together on desktop so the wrap point is
    between "Writing" and the ampersand (mobile keeps the ampersand on line 2) */
 #comp-mim70edx5 .hm-line3 { white-space: nowrap; }
@@ -50,6 +80,20 @@ a { text-decoration: none !important; }
   #comp-mdcn1rj4 { display: none !important; }
   .culture-hero { display: block; width: 100%; margin: 14px auto; }
   .culture-hero img { display: block; width: 100%; height: auto; }
+  /* Culture page: subheading sits below the hero photo on mobile */
+  .culture-subheading {
+    grid-area: auto;
+    width: 100%;
+    margin: 14px auto 0;
+    padding: 0 16px;
+  }
+  /* Culture page: article links return to a single column on mobile */
+  #comp-minnhq72 {
+    column-count: 1;
+    -webkit-columns: 1;
+  }
+  /* Mobile single-column list keeps the after-article group separators */
+  #comp-minnhq72 p:not(:has(a)):has(> span) { display: block; }
   /* Faith page: drop desktop-only spacers that inflate mobile spacing */
   [data-mesh-id="comp-mitp0g6uinlineContent-wedge-4"] { display: none !important; }
   #comp-mijg9elw { min-height: 0 !important; }
