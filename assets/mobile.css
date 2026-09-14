@@ -94,6 +94,8 @@ a { text-decoration: none !important; }
   }
   /* Mobile single-column list keeps the after-article group separators */
   #comp-minnhq72 p:not(:has(a)):has(> span) { display: block; }
+  /* Mobile title spacing returns to double; wrapped lines stay single-spaced */
+  #comp-minnhq72 p { margin-bottom: 0.6em; }
   /* Faith page: drop desktop-only spacers that inflate mobile spacing */
   [data-mesh-id="comp-mitp0g6uinlineContent-wedge-4"] { display: none !important; }
   #comp-mijg9elw { min-height: 0 !important; }
