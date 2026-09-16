@@ -207,7 +207,9 @@ a { text-decoration: none !important; }
   }
   .iv-carousel__viewport {
     gap: 16px;
-    padding: 22px 4px 26px;
+    /* Center the first slide with the centered heading: side padding = half of the
+       leftover width after the 74vw (max 340px) slide */
+    padding: 22px calc((100% - min(74vw, 340px)) / 2) 26px;
   }
   .iv-carousel__slide { width: 74vw; max-width: 340px; }
   .iv-carousel__btn { display: none; }
