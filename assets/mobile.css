@@ -104,7 +104,7 @@ a { text-decoration: none !important; }
   cursor: zoom-in;
 }
 .iv-carousel__slide:hover {
-  transform: scale(1.06);
+  transform: scale(1.325);
   z-index: 5;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
 }
