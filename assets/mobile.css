@@ -88,7 +88,11 @@ a { text-decoration: none !important; }
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
   scrollbar-color: #bbb #fff;
-  padding: 10px 8px 30px;
+  /* Extra vertical room so a hover-zoomed slide (1.325x) is fully visible instead of
+     being clipped by the scroll container; the negative margins let it overlap the
+     header above while keeping the same on-page footprint */
+  padding: 90px 8px 90px;
+  margin: -70px 0 -60px;
 }
 .iv-carousel__slide {
   flex: 0 0 auto;
@@ -104,7 +108,7 @@ a { text-decoration: none !important; }
   cursor: zoom-in;
 }
 .iv-carousel__slide:hover {
-  transform: scale(1.06);
+  transform: scale(1.325);
   z-index: 5;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
 }
@@ -213,6 +217,7 @@ a { text-decoration: none !important; }
   .iv-carousel__viewport {
     gap: 16px;
     padding: 22px 4px 26px;
+    margin: 0;
   }
   .iv-carousel__slide { width: 74vw; max-width: 340px; }
   .iv-carousel__btn { display: none; }
