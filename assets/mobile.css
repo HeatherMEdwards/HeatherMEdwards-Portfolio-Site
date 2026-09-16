@@ -129,6 +129,11 @@ a { text-decoration: none !important; }
 .iv-carousel__btn svg { fill: #222; display: block; }
 .iv-carousel__btn--next { right: 10px; }
 .iv-carousel__btn--prev { left: 10px; }
+/* The exported prev-chevron SVG keeps a flip transform that lands the path outside
+   the small viewBox, so the left arrow renders invisible. Reposition the path the
+   same way as the next chevron and mirror the svg so it points left. */
+.iv-carousel__btn--prev path { transform: translate(-855px, -230px); }
+.iv-carousel__btn--prev svg { transform: scaleX(-1); transform-box: view-box; }
 /* Click-to-expand lightbox: opens the clicked image at almost full screen */
 .iv-lightbox {
   position: fixed;
