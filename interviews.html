@@ -428,7 +428,7 @@
 (function () {
   document.querySelectorAll('.gallery-horizontal-scroll.gallery-column').forEach(function (scroller) {
     var firstItem = scroller.querySelector('.item-link-wrapper');
-    var step = firstItem ? firstItem.offsetWidth + 10 : 332;
+    var step = firstItem ? firstItem.offsetWidth + 10 : scroller.offsetWidth / 2.5;
     var nextBtn = scroller.parentElement.querySelector('[data-hook="nav-arrow-next"]');
     var prevBtn = scroller.parentElement.querySelector('[data-hook="nav-arrow-prev"]');
     if (nextBtn) nextBtn.addEventListener('click', function () {
