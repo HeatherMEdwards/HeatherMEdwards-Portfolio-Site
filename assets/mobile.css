@@ -222,6 +222,8 @@ a { text-decoration: none !important; }
     margin: 0;
   }
   .iv-carousel__slide { width: 74vw; max-width: 340px; }
+  /* Remove the hover zoom on mobile: tapping a slide shouldn't enlarge it */
+  .iv-carousel__slide:hover { transform: none; box-shadow: none; }
   .iv-carousel__btn { display: none; }
   /* Faith page: drop desktop-only spacers that inflate mobile spacing */
   [data-mesh-id="comp-mitp0g6uinlineContent-wedge-4"] { display: none !important; }
