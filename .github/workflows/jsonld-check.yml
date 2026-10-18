@@ -1,0 +1,13 @@
+name: JSON-LD Check
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-jsonld:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON-LD in HTML files
+        run: node scripts/validate-jsonld.mjs
