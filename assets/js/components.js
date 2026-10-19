@@ -10,7 +10,7 @@
 // The nav items live in one place (NAV) so links are managed once.
 
 const NAV = [
-  { href: "/index.html", label: "About" },
+  { href: "/", label: "About" },
   {
     href: "/multimedia.html",
     label: "Multimedia",
@@ -29,7 +29,7 @@ const NAV = [
 // Treat "/" and "/index.html" as the same page.
 const currentPath = () => {
   const p = location.pathname;
-  return p === "/" || p === "" ? "/index.html" : p;
+  return p === "/index.html" || p === "" ? "/" : p;
 };
 
 const isCurrent = (href) => href === currentPath();
