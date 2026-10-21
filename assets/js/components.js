@@ -95,6 +95,25 @@ const desktopNav = () =>
     desktopItem
   ).join("")}</ul></nav>`;
 
+// ---- Plain desktop menu (pages rebuilt without the Wix header) ------------
+
+const plainChild = ({ href, label }) =>
+  `<li><a href="${href}"${isCurrent(href) ? ' aria-current="page"' : ""}>${label}</a></li>`;
+
+const plainItem = ({ href, label, children }) =>
+  `<li${children ? ' class="has-submenu"' : ""}><a href="${href}"${
+    isCurrent(href) ? ' aria-current="page"' : ""
+  }>${label}</a>${
+    children
+      ? `<ul class="site-nav__submenu">${children.map(plainChild).join("")}</ul>`
+      : ""
+  }</li>`;
+
+const plainDesktopNav = () =>
+  `<div class="site-nav-wrap"><nav class="site-nav" aria-label="Site"><ul>${NAV.map(
+    plainItem
+  ).join("")}</ul></nav></div>`;
+
 class SiteHeader extends HTMLElement {
   connectedCallback() {
     if (this.dataset.ready) return;
@@ -103,11 +122,15 @@ class SiteHeader extends HTMLElement {
     // Keep the bar a direct child of <body> so its sticky positioning still
     // spans the whole page (custom elements are inline by default).
     this.style.display = "contents";
-    this.innerHTML = mobileNav();
+
+    const plain = this.hasAttribute("plain");
+    this.innerHTML = mobileNav() + (plain ? plainDesktopNav() : "");
 
     // Fill the existing desktop menu slot if this page has one.
-    const slot = document.getElementById("comp-miy5tb8a");
-    if (slot) slot.innerHTML = desktopNav();
+    if (!plain) {
+      const slot = document.getElementById("comp-miy5tb8a");
+      if (slot) slot.innerHTML = desktopNav();
+    }
   }
 }
 
