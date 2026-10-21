@@ -114,3 +114,69 @@ class SiteHeader extends HTMLElement {
 if (!customElements.get("site-header")) {
   customElements.define("site-header", SiteHeader);
 }
+
+// ---- Footer -------------------------------------------------------------
+//
+// <site-footer> replaces the footer markup that used to be duplicated on every
+// page. Like <site-header> it renders light DOM so the existing CSS keeps
+// applying unchanged. The Wix-exported pages get the original #SITE_FOOTER
+// structure; 404 (which has no #SITE_HEADER) gets its simpler .site-footer
+// markup. Image paths are root-relative so they also resolve on 404.
+//
+// The social links live in one place (SOCIAL) so they are managed once.
+
+const SOCIAL = [
+  {
+    href: "https://www.linkedin.com/in/heathermedwards/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3Bv42cjmHSQ1OVQy9Jp0Z%2Buw%3D%3D",
+    label: "LinkedIn",
+    icon: "linkedin-icon.png",
+  },
+  {
+    href: "https://github.com/HeatherMEdwards",
+    label: "GitHub",
+    icon: "github-icon.png",
+  },
+  {
+    href: "https://www.instagram.com/with.liberty/",
+    label: "Instagram",
+    icon: "instagram-icon.png",
+  },
+];
+
+const COPYRIGHT = "All rights &copy; Heather M. Edwards";
+
+const socialLink = ({ href, label, icon }, size, className) =>
+  `<a${className ? ` class="${className}"` : ""} href="${href}" target="_blank" rel="noreferrer noopener"><img src="/assets/images/shared/${icon}" alt="${label}" width="${size}" height="${size}"/></a>`;
+
+// Markup used by the Wix-exported pages. Keep the id, classes and structure so
+// the generated page CSS and the mobile CSS lay it out exactly as before.
+const wixFooter = () =>
+  `<footer id="SITE_FOOTER" class="MLzr0a SITE_FOOTER siteui-footer" tabindex="-1"><div class="uZIV9d"><div id="bgLayers_SITE_FOOTER" data-hook="bgLayers" data-motion-part="BG_LAYER SITE_FOOTER" class="QG9w8P XzOkCb"><div data-testid="colorUnderlay" class="LNYVZi ayCf9D"></div><div id="bgMedia_SITE_FOOTER" data-motion-part="BG_MEDIA SITE_FOOTER" class="ROWgFb"></div></div><div class="ncI7Xj"></div></div><div class="XKFSfx"><div data-mesh-id="SITE_FOOTERinlineContent" data-testid="inline-content" class=""><div data-mesh-id="SITE_FOOTERinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="hyio5hbu" class="N8MGzv _v6ohL PO9MfV hyio5hbu siteui-rich-text" data-testid="richTextElement"><p class="font_9 color_12 siteui-rich-text__text" style="font-size:14px; line-height:normal; text-align:center;"><span class="color_36 siteui-rich-text__text"><span style="font-weight:bold;" class="siteui-rich-text__text"><span style="font-size:14px;" class="siteui-rich-text__text"><span style="letter-spacing:normal;" class="siteui-rich-text__text">${COPYRIGHT}</span></span></span></span></p></div><!--/$--><div class="footer-social" aria-label="Social links">${SOCIAL.map(
+    (social) => socialLink(social, 30, "footer-social__link")
+  ).join("")}</div><!--/$--></div></div></div></footer>`;
+
+// Simpler markup used by 404.html.
+const simpleFooter = () =>
+  `<footer class="site-footer"><p class="copyright"><strong>${COPYRIGHT}</strong></p><div class="footer-social" aria-label="Social links">${SOCIAL.map(
+    (social) => socialLink(social, 20)
+  ).join("")}</div></footer>`;
+
+class SiteFooter extends HTMLElement {
+  connectedCallback() {
+    if (this.dataset.ready) return;
+    this.dataset.ready = "true";
+
+    // Custom elements are inline by default; let the injected <footer> behave
+    // as if it were a direct child of the original container.
+    this.style.display = "contents";
+
+    // The Wix-exported pages have #SITE_HEADER; 404 does not.
+    this.innerHTML = document.getElementById("SITE_HEADER")
+      ? wixFooter()
+      : simpleFooter();
+  }
+}
+
+if (!customElements.get("site-footer")) {
+  customElements.define("site-footer", SiteFooter);
+}
