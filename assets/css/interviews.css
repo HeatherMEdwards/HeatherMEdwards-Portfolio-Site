@@ -1,12 +1,12 @@
 /* Interviews page (interviews.html). Mobile first. */
 
 main h1 {
-  margin: 30px 0 41px;
+  margin: 30px 0 -3px;
   color: #000;
   font-family: 'Fraunces', Georgia, serif;
-  font-size: clamp(40px, 17.067vw, 64px);
+  font-size: 85px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 107px;
   letter-spacing: 0;
   text-align: center;
 }
@@ -116,8 +116,9 @@ main h1 {
 
 @media (min-width: 751px) {
   main h1 {
-    margin: 14px 0 57px;
-    font-size: 76px;
+    margin: 14px 0 20px;
+    font-size: 101px;
+    line-height: 128px;
   }
 
   .iv-carousel {
