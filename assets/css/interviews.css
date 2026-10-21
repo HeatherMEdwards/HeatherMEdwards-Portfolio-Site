@@ -1,0 +1,157 @@
+/* Interviews page (interviews.html). Mobile first. */
+
+main h1 {
+  margin: 30px 0 -3px;
+  color: #000;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 85px;
+  font-weight: 400;
+  line-height: 107px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.iv-carousel {
+  position: relative;
+  display: flow-root;
+  width: 100%;
+  margin: 14px 0 40px;
+}
+
+/* Horizontal scroll-snap track. On phones the track is full-bleed and each
+   slide is most of the screen; the first slide starts centred. */
+.iv-carousel__viewport {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #bbb #fff;
+  padding: 22px calc((100% - min(74vw, 340px)) / 2) 26px;
+}
+
+.iv-carousel__slide {
+  flex: 0 0 auto;
+  width: 74vw;
+  max-width: 340px;
+  scroll-snap-align: center;
+  margin: 0;
+}
+
+.iv-carousel__slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
+}
+
+/* Prev/next arrows: desktop only */
+.iv-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.iv-carousel__btn:hover { background: #fff; }
+.iv-carousel__btn svg { fill: #222; display: block; }
+/* The exported prev-chevron SVG keeps a flip transform that lands the path outside
+   the small viewBox, so the left arrow renders invisible. Reposition the path the
+   same way as the next chevron and mirror the svg so it points left. */
+.iv-carousel__btn--prev path { transform: translate(-855px, -230px); }
+.iv-carousel__btn--prev svg { transform: scaleX(-1); transform-box: view-box; }
+
+/* Click-to-expand lightbox: opens the clicked image at almost full screen */
+.iv-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.86);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+  cursor: zoom-out;
+}
+.iv-lightbox.is-open { opacity: 1; visibility: visible; }
+.iv-lightbox__media {
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 48px);
+  border-radius: 4px;
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.6);
+  cursor: default;
+}
+.iv-lightbox__close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #222;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.iv-lightbox__close:hover { background: #fff; }
+
+@media (min-width: 751px) {
+  main h1 {
+    margin: 14px 0 20px;
+    font-size: 101px;
+    line-height: 128px;
+  }
+
+  .iv-carousel {
+    width: min(980px, 100%);
+    margin: 10px auto 60px;
+  }
+
+  /* Extra vertical room so a hover-zoomed slide (1.325x) is fully visible instead of
+     being clipped by the scroll container; the negative margins let it overlap the
+     header above while keeping the same on-page footprint */
+  .iv-carousel__viewport {
+    gap: 24px;
+    padding: 90px 8px 90px;
+    margin: -70px 0 -60px;
+  }
+
+  .iv-carousel__slide {
+    width: 300px;
+    max-width: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Hovering a slide zooms it so you can see it better */
+  .iv-carousel__slide:hover {
+    transform: scale(1.325);
+    z-index: 5;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  }
+
+  /* Prev/next arrows, vertically centered over the carousel edges */
+  .iv-carousel__btn {
+    display: flex;
+  }
+  .iv-carousel__btn--next { right: 10px; }
+  .iv-carousel__btn--prev { left: 10px; }
+}

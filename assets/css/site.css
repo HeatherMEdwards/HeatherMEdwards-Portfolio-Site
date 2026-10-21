@@ -9,6 +9,14 @@
 }
 
 @font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/36feef14dd_fraunces_120pt-light.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Avenir LT 35 Light';
   font-style: normal;
   font-weight: 400;
@@ -217,7 +225,7 @@ img {
 
 .site-footer .copyright {
   margin: 0 0 11px;
-  color: #bfbfbf;
+  color: #ffffff;
   font-family: var(--font-sans);
   font-size: 14px;
   line-height: normal;
