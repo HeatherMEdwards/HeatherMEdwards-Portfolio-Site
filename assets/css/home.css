@@ -22,7 +22,7 @@
   padding: 16px 16px 0;
   color: #000;
   font-family: var(--font-serif);
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.04em;
@@ -32,9 +32,9 @@
   margin: 0;
   padding: 8px 16px 0;
   font-family: var(--font-serif);
-  font-size: 24px;
+  font-size: 18.75px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .hero__bio {
@@ -54,7 +54,7 @@
 .hero__photo img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 538px;
   object-fit: cover;
 }
 
