@@ -1,0 +1,143 @@
+/* Politics page (politics.html). Mobile first. */
+
+main h1 {
+  margin: 28px 0 14px;
+  color: #000;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 85px;
+  font-weight: 400;
+  line-height: 104px;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+/* The collage is cropped to the viewport on phones and shown at its natural
+   size from 751px up. */
+.politics-collage {
+  display: block;
+  width: 100%;
+  height: 349px;
+  object-fit: cover;
+}
+
+.politics-year {
+  margin-top: 16px;
+}
+
+.politics-year + .politics-year {
+  margin-top: 28px;
+}
+
+/* Year heading: centred text with the horizontal rules stacked under it. */
+.politics-year__title {
+  margin: 0;
+  padding: 0 16px;
+  color: #000;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.politics-year--2025 .politics-year__title {
+  font-weight: 700;
+}
+
+.politics-year__rule {
+  display: block;
+  width: 250px;
+  height: 1px;
+  margin: 15px auto 0;
+  background: #282626;
+}
+
+.politics-year__rule:not(.politics-year__rule--first) {
+  margin-top: 18px;
+}
+
+.politics-list {
+  margin: 19px 0 0;
+  padding: 0 0 0 16px;
+  list-style: none;
+}
+
+.politics-list li + li {
+  margin-top: 28px;
+}
+
+.politics-list a {
+  color: #000;
+  font-family: 'Avenir LT 35 Light', 'Avenir Next', Avenir, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.politics-list a:hover {
+  color: #2573da;
+}
+
+main {
+  margin-bottom: 60px;
+}
+
+@media (min-width: 751px) {
+  main h1 {
+    margin: 1px 0 -2px;
+    font-size: 94px;
+    line-height: 116px;
+  }
+
+  .politics-collage {
+    width: 943px;
+    max-width: 100%;
+    height: 349px;
+    margin: 0 auto;
+  }
+
+  .politics-year {
+    margin-top: 44px;
+  }
+
+  .politics-year + .politics-year {
+    margin-top: 45px;
+  }
+
+  /* The rules move to either side of the heading and fill the row. */
+  .politics-year__head {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 924px;
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+
+  .politics-year__title {
+    order: 2;
+    flex: none;
+    padding: 0;
+    letter-spacing: 0.03em;
+  }
+
+  .politics-year__rule {
+    order: 1;
+    flex: 1;
+    width: auto;
+    margin: 0;
+  }
+
+  .politics-year__rule:not(.politics-year__rule--first) {
+    order: 3;
+    margin-top: 0;
+  }
+
+  .politics-list {
+    width: 924px;
+    max-width: calc(100% - 32px);
+    margin: 22px auto 0;
+    padding-left: 35px;
+  }
+}
