@@ -59,7 +59,7 @@ main h1 {
 
 .politics-list {
   margin: 19px 0 0;
-  padding: 0 0 0 16px;
+  padding: 0 16px;
   list-style: none;
 }
 
@@ -137,7 +137,7 @@ main {
   .politics-list {
     width: 924px;
     max-width: calc(100% - 32px);
-    margin: 22px auto 0;
+    margin: 55px auto 0;
     padding-left: 35px;
   }
 }
