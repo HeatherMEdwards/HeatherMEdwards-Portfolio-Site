@@ -1,5 +1,21 @@
 /* Politics page (politics.html). Mobile first. */
 
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/6af86461eb_iEjm9hVxcattz37Y8gZwVVBiiiFZ1SMKhjDurTuPCI4.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/f2a6e31eee_iEjm9hVxcattz37Y8gZwVVYUpUlN7yzNHgIMH66hSOI.woff2') format('woff2');
+  font-display: swap;
+}
+
 main h1 {
   margin: 28px 0 14px;
   color: #000;
@@ -7,7 +23,7 @@ main h1 {
   font-size: 85px;
   font-weight: 400;
   line-height: 104px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-align: center;
 }
 
@@ -69,18 +85,31 @@ main h1 {
 
 .politics-list a {
   color: #000;
-  font-family: 'Avenir LT 35 Light', 'Avenir Next', Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-size: 18px;
   line-height: 1.4;
   text-decoration: none;
 }
 
-.politics-list a:hover {
+.politics-list a:hover,
+.politics-list a:focus-visible {
   color: #2573da;
+  text-decoration: underline;
 }
 
 main {
   margin-bottom: 60px;
+}
+
+/* Politics keeps the Wix-sized footer (101px on mobile, 125px from 751px up)
+   without changing the shared footer on the other pages. */
+.politics-page .site-footer {
+  padding: 14px 16px 20px;
+}
+
+.politics-page .site-footer .copyright {
+  margin-bottom: 20px;
+  line-height: 17px;
 }
 
 @media (min-width: 751px) {
@@ -88,6 +117,15 @@ main {
     margin: 1px 0 -2px;
     font-size: 94px;
     line-height: 116px;
+    letter-spacing: 0.08em;
+  }
+
+  .politics-page .site-footer {
+    padding-top: 26px;
+  }
+
+  .politics-page .site-footer .copyright {
+    margin-bottom: 32px;
   }
 
   .politics-collage {

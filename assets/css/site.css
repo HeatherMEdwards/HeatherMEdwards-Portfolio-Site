@@ -217,19 +217,18 @@ img {
   }
 }
 
-/* Footer. Sized to match the height of the old Wix footer: 101px on mobile
-   and 125px from 751px up. */
+/* Footer. */
 .site-footer {
-  padding: 14px 16px 20px;
+  padding: 12px 16px 13px;
   background: #9f9f9f;
 }
 
 .site-footer .copyright {
-  margin: 0 0 20px;
+  margin: 0 0 11px;
   color: #ffffff;
   font-family: var(--font-sans);
   font-size: 14px;
-  line-height: 17px;
+  line-height: normal;
   text-align: center;
 }
 
@@ -256,30 +255,4 @@ img {
   display: block;
   width: 30px;
   height: 30px;
-}
-
-@media (min-width: 751px) {
-  .site-footer {
-    padding-top: 26px;
-  }
-
-  .site-footer .copyright {
-    margin-bottom: 32px;
-  }
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 600;
-  src: url('/assets/6af86461eb_iEjm9hVxcattz37Y8gZwVVBiiiFZ1SMKhjDurTuPCI4.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/assets/f2a6e31eee_iEjm9hVxcattz37Y8gZwVVYUpUlN7yzNHgIMH66hSOI.woff2') format('woff2');
-  font-display: swap;
 }
