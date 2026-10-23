@@ -1,0 +1,175 @@
+/* Politics page (politics.html). Mobile first. */
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/6af86461eb_iEjm9hVxcattz37Y8gZwVVBiiiFZ1SMKhjDurTuPCI4.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/f2a6e31eee_iEjm9hVxcattz37Y8gZwVVYUpUlN7yzNHgIMH66hSOI.woff2') format('woff2');
+  font-display: swap;
+}
+
+.page-title {
+  margin: 28px 0 14px;
+  line-height: 104px;
+  letter-spacing: 0.08em;
+}
+
+/* The collage is cropped to the viewport on phones and shown at its natural
+   size from 751px up. */
+.politics-collage {
+  display: block;
+  width: 100%;
+  height: 349px;
+  object-fit: cover;
+}
+
+.politics-year {
+  margin-top: 16px;
+}
+
+.politics-year + .politics-year {
+  margin-top: 28px;
+}
+
+/* Year heading: centred text with the horizontal rules stacked under it. */
+.politics-year__title {
+  margin: 0;
+  padding: 0 16px;
+  color: #000;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.politics-year--2025 .politics-year__title {
+  font-weight: 700;
+}
+
+.politics-year__rule {
+  display: block;
+  width: 250px;
+  height: 1px;
+  margin: 15px auto 0;
+  background: #282626;
+}
+
+.politics-year__rule:not(.politics-year__rule--first) {
+  margin-top: 18px;
+}
+
+.politics-list {
+  margin: 19px 0 0;
+  padding: 0 16px;
+  list-style: none;
+}
+
+.politics-list li + li {
+  margin-top: 28px;
+}
+
+.politics-list a {
+  color: #000;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.politics-list a:hover,
+.politics-list a:focus-visible {
+  color: #2573da;
+  text-decoration: underline;
+}
+
+main {
+  margin-bottom: 60px;
+}
+
+/* Politics keeps the Wix-sized footer (101px on mobile, 125px from 751px up)
+   without changing the shared footer on the other pages. */
+.politics-page .site-footer {
+  padding: 14px 16px 20px;
+}
+
+.politics-page .site-footer .copyright {
+  margin-bottom: 20px;
+  line-height: 17px;
+}
+
+@media (min-width: 751px) {
+  .page-title {
+    margin: 1px 0 -2px;
+    font-size: 94px;
+    line-height: 116px;
+  }
+
+  .politics-page .site-footer {
+    padding-top: 26px;
+  }
+
+  .politics-page .site-footer .copyright {
+    margin-bottom: 32px;
+  }
+
+  .politics-collage {
+    width: 943px;
+    max-width: 100%;
+    height: 349px;
+    margin: 0 auto;
+  }
+
+  .politics-year {
+    margin-top: 44px;
+  }
+
+  .politics-year + .politics-year {
+    margin-top: 45px;
+  }
+
+  /* The rules move to either side of the heading and fill the row. */
+  .politics-year__head {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 924px;
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+
+  .politics-year__title {
+    order: 2;
+    flex: none;
+    padding: 0;
+    letter-spacing: 0.03em;
+  }
+
+  .politics-year__rule {
+    order: 1;
+    flex: 1;
+    width: auto;
+    margin: 0;
+  }
+
+  .politics-year__rule:not(.politics-year__rule--first) {
+    order: 3;
+    margin-top: 0;
+  }
+
+  .politics-list {
+    width: 924px;
+    max-width: calc(100% - 32px);
+    margin: 55px auto 0;
+    padding-left: 35px;
+  }
+}
