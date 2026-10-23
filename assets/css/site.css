@@ -52,6 +52,15 @@ img {
   max-width: 100%;
 }
 
+/* Page title (shared across page templates). */
+.page-title {
+  color: #000;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 85px;
+  font-weight: 400;
+  text-align: center;
+}
+
 /* Mobile menu bar (hidden above 750px). */
 .mob-menu-bar {
   display: none;
