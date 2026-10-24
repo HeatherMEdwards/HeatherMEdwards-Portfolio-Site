@@ -1,0 +1,96 @@
+/* Human Rights page (humanrights.html). Mobile first. */
+
+@font-face {
+  font-family: 'Helvetica W01 Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/6b6535fa8b_helvetica-w01-bold.woff2') format('woff2');
+  unicode-range: U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2122;
+  font-display: swap;
+}
+
+/* The title scales with the screen on phones, like the old SVG title. */
+.page-title {
+  margin: 30px 0 12px;
+  font-size: 16vw;
+  line-height: 1.2237;
+}
+
+/* Article cards: a photo with its title underneath, all one link. Phones
+   show the photos full width at their own shape. */
+.hr-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hr-card + .hr-card {
+  margin-top: 24px;
+}
+
+.hr-card a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+.hr-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hr-card__title {
+  display: block;
+  min-height: 84px;
+  padding-top: 18px;
+  font-family: 'Helvetica W01 Bold', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+}
+
+.hr-card a:hover .hr-card__title,
+.hr-card a:focus-visible .hr-card__title {
+  text-decoration: underline;
+}
+
+main {
+  margin-bottom: 78px;
+}
+
+@media (min-width: 751px) {
+  .page-title {
+    margin-top: 13px;
+    font-size: 89px;
+  }
+
+  /* Three square photos per row, 720px wide in all. */
+  .hr-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 720px;
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+
+  .hr-card + .hr-card {
+    margin-top: 0;
+  }
+
+  .hr-card img {
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .hr-card__title {
+    min-height: 81px;
+    padding-top: 15px;
+  }
+
+  main {
+    margin-bottom: 42px;
+  }
+}
