@@ -41,7 +41,7 @@ const mobileLink = ({ href, label }) =>
 const mobileNav = () =>
   `<div class="mob-menu-bar">
 <input type="checkbox" id="mob-toggle" class="mob-toggle"/>
-<label for="mob-toggle" class="mob-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+<label for="mob-toggle" class="mob-burger"><span class="visually-hidden">Menu</span><span></span><span></span><span></span></label>
 <nav class="mob-nav">
 ${NAV.map((item) =>
   item.children
