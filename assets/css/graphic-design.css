@@ -1,0 +1,75 @@
+/* Graphic Design page (graphic-design.html). Mobile first. */
+
+/* Title with a rule above and below it on phones, and one either side of it
+   from 751px up. */
+.gd-title__rule {
+  display: block;
+  width: 239px;
+  max-width: calc(100% - 32px);
+  margin: 28px auto 0;
+  border-top: 1px solid #000;
+}
+
+.gd-title .page-title {
+  margin: 21px 0 0;
+  font-size: 15vw;
+  line-height: 1.2237;
+}
+
+.gd-title__rule + .page-title + .gd-title__rule {
+  margin-top: 14px;
+  margin-bottom: 21px;
+}
+
+main {
+  margin-bottom: 41px;
+}
+
+@media (min-width: 751px) {
+  .gd-title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 980px;
+    max-width: calc(100% - 32px);
+    margin: 0 auto 33px;
+  }
+
+  .gd-title__rule,
+  .gd-title__rule + .page-title + .gd-title__rule {
+    flex: 0 1 239px;
+    min-width: 0;
+    margin: 69px 0 0;
+  }
+
+  .gd-title .page-title {
+    flex: none;
+    margin-top: 33px;
+    font-size: 84px;
+  }
+
+  main {
+    margin-bottom: 27px;
+  }
+
+  /* Photo positions measured from the Wix page at 1280px, where the box is
+     980 x 1957px. */
+  .graphic-design-gallery {
+    width: 980px;
+    aspect-ratio: 980 / 1957;
+  }
+
+  .graphic-design-gallery > :nth-child(1) { left: 0%; top: 0%; width: 32.55%; height: 16.3%; }
+  .graphic-design-gallery > :nth-child(2) { left: 33.78%; top: 0%; width: 32.55%; height: 16.3%; }
+  .graphic-design-gallery > :nth-child(3) { left: 67.55%; top: 0%; width: 32.45%; height: 25.96%; }
+  .graphic-design-gallery > :nth-child(4) { left: 0%; top: 16.91%; width: 32.55%; height: 21.1%; }
+  .graphic-design-gallery > :nth-child(5) { left: 33.78%; top: 16.91%; width: 32.55%; height: 16.3%; }
+  .graphic-design-gallery > :nth-child(6) { left: 67.55%; top: 26.57%; width: 32.45%; height: 21.67%; }
+  .graphic-design-gallery > :nth-child(7) { left: 33.78%; top: 33.83%; width: 32.55%; height: 16.3%; }
+  .graphic-design-gallery > :nth-child(8) { left: 0%; top: 38.63%; width: 32.55%; height: 21.72%; }
+  .graphic-design-gallery > :nth-child(9) { left: 67.55%; top: 48.85%; width: 32.45%; height: 21.67%; }
+  .graphic-design-gallery > :nth-child(10) { left: 33.78%; top: 50.74%; width: 32.55%; height: 13.64%; }
+  .graphic-design-gallery > :nth-child(11) { left: 0%; top: 60.96%; width: 32.55%; height: 20.39%; }
+  .graphic-design-gallery > :nth-child(12) { left: 33.78%; top: 65%; width: 32.55%; height: 16.3%; }
+  .graphic-design-gallery > :nth-child(13) { left: 67.55%; top: 71.13%; width: 32.45%; height: 28.87%; }
+}
