@@ -1,0 +1,134 @@
+/* Culture page (culture.html). Mobile first. */
+
+.page-title {
+  margin: 30px 0 12px;
+  font-size: 25.3vw;
+  line-height: 1.2237;
+  letter-spacing: 0.09em;
+}
+
+/* Phones show one photo; the collage replaces it from 751px up. */
+.culture-hero {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.culture-collage {
+  display: none;
+}
+
+.culture-heading {
+  margin: 14px 0 0;
+  padding: 0 32px;
+  color: #000;
+  font-family: var(--font-serif);
+  font-size: 7vw;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.culture-list {
+  margin-top: 17px;
+  padding: 0 16px;
+}
+
+.culture-list li {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.culture-list li + li {
+  margin-top: 35.6px;
+}
+
+main {
+  margin-bottom: 51px;
+}
+
+@media (min-width: 751px) {
+  .page-title {
+    margin: 6px 0 17px;
+    font-size: 109px;
+    letter-spacing: 0.1em;
+  }
+
+  .culture-hero {
+    display: none;
+  }
+
+  /* Nine photos on the measured Wix grid: 968 x 395px at full size, scaled
+     down with the page below that. */
+  .culture-collage {
+    display: grid;
+    grid-template-columns: minmax(0, 209fr) minmax(0, 192fr) minmax(0, 285fr) minmax(0, 120fr) minmax(0, 142fr);
+    grid-template-rows: minmax(0, 138fr) minmax(0, 7fr) minmax(0, 49fr) minmax(0, 43fr) minmax(0, 138fr);
+    gap: 5px;
+    width: 968px;
+    max-width: calc(100% - 32px);
+    aspect-ratio: 968 / 395;
+    margin: 0 auto;
+  }
+
+  .culture-collage > * {
+    display: block;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .culture-collage img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .culture-collage > :nth-child(1) { grid-area: 1 / 1 / 5 / 2; }
+  .culture-collage > :nth-child(2) { grid-area: 5 / 1 / 6 / 2; }
+  .culture-collage > :nth-child(3) { grid-area: 1 / 2 / 3 / 3; }
+  .culture-collage > :nth-child(4) { grid-area: 3 / 2 / 6 / 3; }
+  .culture-collage > :nth-child(5) { grid-area: 1 / 3 / 4 / 4; }
+  .culture-collage > :nth-child(6) { grid-area: 4 / 3 / 6 / 4; }
+  .culture-collage > :nth-child(7) { grid-area: 1 / 4 / 2 / 5; }
+  .culture-collage > :nth-child(8) { grid-area: 1 / 5 / 2 / 6; }
+  .culture-collage > :nth-child(9) { grid-area: 2 / 4 / 6 / 6; }
+
+  .culture-heading {
+    width: 850px;
+    max-width: calc(100% - 32px);
+    margin: 48px auto 0;
+    padding: 0;
+    font-size: 36px;
+    line-height: 1.4;
+  }
+
+  /* Two columns. Like the Wix page they start 65px right of the heading's
+     980px box, which keeps them off-centre on wide screens. */
+  .culture-list {
+    columns: 2;
+    column-gap: 48px;
+    width: 957px;
+    max-width: calc(100% - 32px);
+    margin: 22px 0 0 max(16px, min(50% - 425px, 100% - 16px - 957px));
+    padding: 0;
+  }
+
+  .culture-list li {
+    break-inside: avoid;
+  }
+
+  .culture-list li + li {
+    margin-top: 28.8px;
+  }
+
+  /* The second column starts with "Anatomy of Love", as on the Wix page. */
+  .culture-list li:nth-child(19) {
+    margin-top: 0;
+    break-before: column;
+  }
+
+  main {
+    margin-bottom: 11px;
+  }
+}
