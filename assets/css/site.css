@@ -201,7 +201,7 @@ img {
   }
 }
 
-/* Plain desktop menu, used by pages built without the Wix header. */
+/* Plain desktop menu. */
 .site-nav-wrap {
   display: none;
 }
