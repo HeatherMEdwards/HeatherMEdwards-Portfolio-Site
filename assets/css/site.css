@@ -17,6 +17,22 @@
 }
 
 @font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/6af86461eb_iEjm9hVxcattz37Y8gZwVVBiiiFZ1SMKhjDurTuPCI4.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/f2a6e31eee_iEjm9hVxcattz37Y8gZwVVYUpUlN7yzNHgIMH66hSOI.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Avenir LT 35 Light';
   font-style: normal;
   font-weight: 400;
@@ -59,6 +75,25 @@ img {
   font-size: 85px;
   font-weight: 400;
   text-align: center;
+}
+
+/* List of article links (Politics, Faith). Pages set the size and spacing. */
+.article-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article-list a {
+  color: #000;
+  font-family: var(--font-sans);
+  text-decoration: none;
+}
+
+.article-list a:hover,
+.article-list a:focus-visible {
+  color: #2573da;
+  text-decoration: underline;
 }
 
 /* Mobile menu bar (hidden above 750px). */
@@ -239,6 +274,27 @@ img {
   font-size: 14px;
   line-height: normal;
   text-align: center;
+}
+
+/* Taller footer matching the old Wix footer (101px on mobile, 125px from 751px
+   up), for pages whose body has the tall-footer class. */
+.tall-footer .site-footer {
+  padding: 14px 16px 20px;
+}
+
+.tall-footer .site-footer .copyright {
+  margin-bottom: 20px;
+  line-height: 17px;
+}
+
+@media (min-width: 751px) {
+  .tall-footer .site-footer {
+    padding-top: 26px;
+  }
+
+  .tall-footer .site-footer .copyright {
+    margin-bottom: 32px;
+  }
 }
 
 .site-footer .copyright strong {

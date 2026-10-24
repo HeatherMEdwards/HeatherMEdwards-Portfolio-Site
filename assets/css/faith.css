@@ -1,0 +1,155 @@
+/* Faith page (faith.html). Mobile first. */
+
+.page-title {
+  margin: 28px 0 14px;
+  font-size: 106px;
+  line-height: 131px;
+}
+
+/* Phones show one photo; the collage replaces it from 751px up. */
+.faith-hero {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.faith-collage {
+  display: none;
+}
+
+.faith-heading {
+  margin: 14px 0 0;
+  padding: 0 16px 5px;
+  color: #000;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.faith-columns {
+  padding: 0 16px;
+}
+
+.faith-group__title {
+  margin: 14px 0 0;
+  color: #000;
+  font-family: var(--font-serif);
+  font-size: min(6vw, 22.5px);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.faith-list {
+  margin-top: 26px;
+}
+
+.faith-list li {
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.faith-list li + li {
+  margin-top: 21px;
+}
+
+.faith-list__note {
+  color: #404040;
+}
+
+main {
+  margin-bottom: 14px;
+}
+
+@media (min-width: 751px) {
+  .page-title {
+    margin: 7px 0 1px;
+    font-size: 117px;
+    line-height: 143px;
+  }
+
+  .faith-hero {
+    display: none;
+  }
+
+  /* Six photos on the measured Wix grid: 1015 x 381px at full size, scaled
+     down with the page below that. */
+  .faith-collage {
+    display: grid;
+    grid-template-columns: minmax(0, 187fr) minmax(0, 160fr) minmax(0, 193fr) minmax(0, 460fr);
+    grid-template-rows: minmax(0, 125fr) minmax(0, 37fr) minmax(0, 209fr);
+    gap: 5px;
+    width: 1015px;
+    max-width: calc(100% - 32px);
+    aspect-ratio: 1015 / 381;
+    margin: 0 auto;
+  }
+
+  .faith-collage img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .faith-collage img:nth-child(1) { grid-area: 1 / 1; }
+  .faith-collage img:nth-child(2) { grid-area: 1 / 2; }
+  .faith-collage img:nth-child(3) { grid-area: 2 / 1 / 4 / 3; }
+  .faith-collage img:nth-child(4) { grid-area: 1 / 3 / 3 / 4; }
+  .faith-collage img:nth-child(5) { grid-area: 3 / 3; }
+  .faith-collage img:nth-child(6) { grid-area: 1 / 4 / 4 / 5; }
+
+  .faith-heading {
+    width: 902px;
+    max-width: calc(100% - 32px);
+    margin: 9px auto 0;
+    padding: 0;
+    line-height: 54px;
+    letter-spacing: 0.03em;
+  }
+
+  /* Two columns: With Liberty on the left, Interfaith Now and Publishous on
+     the right. */
+  .faith-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 399fr) minmax(0, 385fr);
+    column-gap: 118px;
+    align-items: start;
+    width: 902px;
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .faith-group__title {
+    margin-top: 35px;
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .faith-group + .faith-group .faith-group__title {
+    margin-top: 96px;
+  }
+
+  .faith-list {
+    margin-top: 33px;
+  }
+
+  .faith-list li {
+    line-height: 1.75;
+  }
+
+  .faith-list li + li {
+    margin-top: 33px;
+  }
+
+  .faith-group--publishous .faith-list li {
+    line-height: normal;
+  }
+
+  main {
+    margin-bottom: 29px;
+  }
+}
