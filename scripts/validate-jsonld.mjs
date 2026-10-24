@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 
 const ROOT = process.cwd();
-const SKIP_DIRS = new Set(['assets', 'original-wix', 'node_modules', 'docs', '.git', '.github']);
+const SKIP_DIRS = new Set(['assets', 'node_modules', 'docs', '.git', '.github']);
 
 let filesScanned = 0;
 let blocksFound = 0;
