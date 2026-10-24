@@ -2,7 +2,8 @@
 
 .page-title {
   margin: 30px 0 -3px;
-  line-height: 107px;
+  font-size: min(85px, 22.67vw);
+  line-height: min(107px, 28.54vw);
   letter-spacing: 0;
 }
 
