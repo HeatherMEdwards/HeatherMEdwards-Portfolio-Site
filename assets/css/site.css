@@ -96,6 +96,36 @@ img {
   text-decoration: underline;
 }
 
+/* Photo gallery copied from a Wix masonry layout (Photography, Graphic
+   Design). Phones stack the photos full width; from 751px up each page's CSS
+   places every photo at its measured position, as percentages of the box. */
+.masonry img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.masonry img + img {
+  margin-top: 27px;
+}
+
+@media (min-width: 751px) {
+  .masonry {
+    position: relative;
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+
+  .masonry img {
+    position: absolute;
+    object-fit: cover;
+  }
+
+  .masonry img + img {
+    margin-top: 0;
+  }
+}
+
 /* Mobile menu bar (hidden above 750px). */
 .mob-menu-bar {
   display: none;
