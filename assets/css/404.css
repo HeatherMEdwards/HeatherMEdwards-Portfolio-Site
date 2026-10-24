@@ -1,0 +1,96 @@
+@font-face {font-family: 'tenor sans'; font-style: normal; font-weight: 400; src: url('/assets/tenor-sans-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face {font-family: 'glacial indifference'; font-style: normal; font-weight: 400; src: url('/assets/glacial-indifference-regular.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+html, body { height: 100%; }
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  font-family: 'tenor sans', Arial, Helvetica, sans-serif;
+}
+.page {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.error-message {
+  margin: 16px 16px 38px;
+  font-family: 'tenor sans', Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  line-height: 1.25em;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #000000;
+}
+.hero {
+  position: relative;
+  max-height: 100vh;
+  overflow: hidden;
+}
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 62vh;
+  object-fit: contain;
+  margin: 0 auto;
+}
+.links {
+  margin: 24px 16px 40px;
+  font-family: 'glacial indifference', 'tenor sans', Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.25em;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #000000;
+}
+.links a {
+  color: #000000;
+  text-decoration: underline;
+}
+.links a:hover { color: #2573da; }
+.photo-credit {
+  margin: 8px 16px 0;
+  font-family: 'tenor sans', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.4em;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #000000;
+}
+.site-footer {
+  flex-shrink: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 16px 13px;
+  background: rgba(64, 64, 64, 0.5);
+}
+.site-footer .copyright {
+  margin: 0 0 11px;
+  font-family: 'tenor sans', Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: normal;
+  text-align: center;
+  color: #000000;
+}
+.site-footer .copyright strong { font-weight: bold; }
+.site-footer .footer-social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.site-footer .footer-social a {
+  display: inline-flex;
+  align-items: center;
+}
+.site-footer .footer-social img { display: block; width: 20px; height: 20px; }
